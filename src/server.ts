@@ -20,8 +20,8 @@ app.use('/api', router);
 app.use(errorHandler);
 
 
-// app.listen(process.env.PORT, () => console.log('listening on port: 3000'));
+app.listen(process.env.PORT, () => console.log('listening on port: 3000'));
 
 // Serverless
-const server = serverless(app);
-export { server };
+// const server = serverless(app);
+// export { server };
