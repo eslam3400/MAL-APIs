@@ -2,6 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import { z } from 'zod';
 import { APIError } from '../errors/base.error';
 import ErrorEnum from '../enums/error.enum';
+import logger from '../config/logger.config';
 
 export const errorHandler = (err: Error, req: Request, res: Response, next: NextFunction) => {
   let error: any = err.message;
@@ -16,5 +17,6 @@ export const errorHandler = (err: Error, req: Request, res: Response, next: Next
     statusCode = err.status;
   }
 
+  logger.error(err);
   res.status(statusCode).json({ error });
 };
