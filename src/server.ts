@@ -19,12 +19,9 @@ app.use('/api', router);
 // Global error handler
 app.use(errorHandler);
 
-let server;
 
-if (process.env.NODE_ENV !== 'production') {
-  app.listen(3000, () => console.log('listening on port: 3000'));
-} else {
-  server = serverless(app);
-}
+// app.listen(process.env.PORT, () => console.log('listening on port: 3000'));
 
+// Serverless
+const server = serverless(app);
 export { server };

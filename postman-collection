@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "b1a81e11-ffc0-4296-b71c-a98f169c03e0",
+		"name": "MAL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11965876"
+	},
+	"item": [
+		{
+			"name": "v1",
+			"item": [
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "Send OTP",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"phone\": \"1234567\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{stage}}/auth/otp",
+									"host": [
+										"{{stage}}"
+									],
+									"path": [
+										"auth",
+										"otp"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Verify OTP",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"phone\": \"1234567\",\r\n    \"otp\": 1234\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{stage}}/auth/otp/verify",
+									"host": [
+										"{{stage}}"
+									],
+									"path": [
+										"auth",
+										"otp",
+										"verify"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Logout",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ2IjozLCJpZCI6IjY1MDY0YzM5M2QzOGVjM2JlNDhmNGUyOSIsImlhdCI6MTY5NDkxMTkyMCwiZXhwIjoxNjk0OTk4MzIwfQ.byyK6bDvJc9L0gWfKk90n7RN7_HSwg83fwJUEr0TJvo",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{stage}}/auth/logout",
+									"host": [
+										"{{stage}}"
+									],
+									"path": [
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Me",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ2IjozLCJpZCI6IjY1MDY0YzM5M2QzOGVjM2JlNDhmNGUyOSIsImlhdCI6MTY5NDkxMTkyMCwiZXhwIjoxNjk0OTk4MzIwfQ.byyK6bDvJc9L0gWfKk90n7RN7_HSwg83fwJUEr0TJvo",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{stage}}/auth/me",
+									"host": [
+										"{{stage}}"
+									],
+									"path": [
+										"auth",
+										"me"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "stage",
+			"value": "https://ngbnolwylc.execute-api.us-east-1.amazonaws.com/api/v1"
+		},
+		{
+			"key": "local",
+			"value": "localhost:3000/api/v1",
+			"type": "string"
+		}
+	]
+}
