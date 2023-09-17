@@ -41,7 +41,7 @@ To run this application, follow these steps:
 
 ## Usage
 
-- **Postman Collection** is provided as `MAL`
+- **Postman Collection** is provided
 - Access the application using a tool like Postman or a web browser.
 - Use appropriate endpoints as defined in the `Postman` to interact with the application.
 
